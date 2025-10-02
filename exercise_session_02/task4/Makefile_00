@@ -1,5 +1,5 @@
 cpi_omp_O0: cpi.omp.c
-	cc -O0 -o cpi_omp_O-1 -fopenmp cpi.omp.c 
+	cc -O0 -o cpi_omp_O0  -fopenmp cpi.omp.c 
 
 
 all: cpi_omp_O0 
