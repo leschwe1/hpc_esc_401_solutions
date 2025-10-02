@@ -1,0 +1,3 @@
+slurmstepd: error: execve(): cpi_omp_O-1: Exec format error
+srun: error: nid002239: task 0: Exited with exit code 8
+srun: Terminating StepId=5722087.0

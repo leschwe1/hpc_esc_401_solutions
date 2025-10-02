@@ -1,30 +1,12 @@
+Thread rank: 9
+Thread rank: 1
+Thread rank: 2
+Thread rank: 4
+Thread rank: 3
+Thread rank: 6
+Thread rank: 8
 Thread rank: 0
-pi is approximately 3.1415926542566006, Error is 0.0000000006668075
-Computed in 4.447 seconds
-Thread rank: 0
-pi is approximately 3.1415926542566006, Error is 0.0000000006668075
-Computed in 4.447 seconds
-Thread rank: 0
-pi is approximately 3.1415926542566006, Error is 0.0000000006668075
-Computed in 4.448 seconds
-Thread rank: 0
-pi is approximately 3.1415926542566006, Error is 0.0000000006668075
-Computed in 4.45 seconds
-Thread rank: 0
-pi is approximately 3.1415926542566006, Error is 0.0000000006668075
-Computed in 4.466 seconds
-Thread rank: 0
-pi is approximately 3.1415926542566006, Error is 0.0000000006668075
-Computed in 4.501 seconds
-Thread rank: 0
-pi is approximately 3.1415926542566006, Error is 0.0000000006668075
-Computed in 4.501 seconds
-Thread rank: 0
-pi is approximately 3.1415926542566006, Error is 0.0000000006668075
-Computed in 4.502 seconds
-Thread rank: 0
-pi is approximately 3.1415926542566006, Error is 0.0000000006668075
-Computed in 4.502 seconds
-Thread rank: 0
-pi is approximately 3.1415926542566006, Error is 0.0000000006668075
-Computed in 4.503 seconds
+Thread rank: 7
+Thread rank: 5
+pi is approximately 3.1415926542564856, Error is 0.0000000006666925
+Computed in 1.315 seconds
