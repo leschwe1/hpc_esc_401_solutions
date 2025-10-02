@@ -14,9 +14,12 @@ I checked for errors but all error logs are empty - success
 
 # Conclusion
 If we run on one or 10 threads speeds the process up quite a bit. Computation time goes down from 4.5 seconds to 1.2 seconds. But the compilation level has a way larger impact. With O0 we end on a computation time of 23.6 seconds. This is way higher than the other two even if it was run on 128 threads which should be much faster than 1 or ten (thread-wise)
+Increase in speed is about 3.8 times. But not 10 times better --> non linear increase
+
 
 speeds the process up quite a bit. Computation time goes down from 4.5 seconds to 1.2 seconds. But the compilation level has a way larger impact. With O0 we end on a computation time of 23.6 seconds. This is way higher than the other two even if it was run on 128 threads which should be much faster than 1 or ten (thread-wise)
 
+In addition, we see a much higher error in the pi calculation for the O0 version compared to the other two
 
 
 
