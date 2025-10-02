@@ -1,4 +1,4 @@
-#Process
+# Process
 So I first generated all files:
 
 cpi_omp: compiled in prior tasks
@@ -12,7 +12,7 @@ now i executed all runners.
 
 I checked for errors but all error logs are empty - success
 
-#Conclusion
+# Conclusion
 If we run on one or 10 threads speeds the process up quite a bit. Computation time goes down from 4.5 seconds to 1.2 seconds. But the compilation level has a way larger impact. With O0 we end on a computation time of 23.6 seconds. This is way higher than the other two even if it was run on 128 threads which should be much faster than 1 or ten (thread-wise)
 
 speeds the process up quite a bit. Computation time goes down from 4.5 seconds to 1.2 seconds. But the compilation level has a way larger impact. With O0 we end on a computation time of 23.6 seconds. This is way higher than the other two even if it was run on 128 threads which should be much faster than 1 or ten (thread-wise)
@@ -20,12 +20,13 @@ speeds the process up quite a bit. Computation time goes down from 4.5 seconds t
 
 
 
-#output thread1
+# output thread1
 Thread rank: 0
 pi is approximately 3.1415926542566006, Error is 0.0000000006668075
 Computed in 4.479 seconds
 
-#output thread10
+# output thread10
+
 Thread rank: 9
 Thread rank: 2
 Thread rank: 1
@@ -39,7 +40,8 @@ Thread rank: 7
 pi is approximately 3.1415926542564856, Error is 0.0000000006666925
 Computed in 1.177 seconds
 
-#output verO0
+# output verO0
+
 Thread rank: 4
 Thread rank: 1
 Thread rank: 2
