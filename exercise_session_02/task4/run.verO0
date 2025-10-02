@@ -4,13 +4,13 @@
 #SBATCH --time=00:05:00
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-core=1
-#SBATCH --ntasks-per-node=128
-#SBATCH --cpus-per-task=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --cpus-per-task=128
 #SBATCH --partition=debug
 #SBATCH --constraint=mc
 #SBATCH --output=output_verO0.log
 #SBATCH --error=errors_verO0.log
 
-export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
+export OMP_NUM_THREADS=128
 
 srun cpi_omp_O-1
