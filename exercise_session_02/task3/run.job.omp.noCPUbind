@@ -8,9 +8,9 @@
 #SBATCH --cpus-per-task=128
 #SBATCH --partition=debug
 #SBATCH --constraint=mc
-#SBATCH --output=output_omp.log
-#SBATCH --error=errors_omp.log
+#SBATCH --output=output_omp.noCPUbind.log
+#SBATCH --error=errors_omp.noCPUbind.log
 
 export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 
-srun cpi_omp
+srun --cpu-bind=none cpi_omp

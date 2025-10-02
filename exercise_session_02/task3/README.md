@@ -11,3 +11,7 @@ USED COMMAND:
 squeue -O jobid,UserName,priority,account,name,numnodes,state,reason,starttime,timeleft,priority
 
 I had to edit user to UserName, nodes to numnodes as looked up on squeue --helpFormat
+
+
+
+the cpu-bind=non flag disables pinning --> OpenMP threads run on any available CPU core --> might improve performance
