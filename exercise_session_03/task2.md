@@ -53,8 +53,14 @@ Code file: sum_p.c
 I do not know if (and how?) to plot you the speedup in an .md, so for now I just give you the numbers:
 I did a quick excel plot for myself
 
-n = 1 time 1.079s
-n = 2 
-n = 4
-n = 8 
-n = 16 
+n = 1 time 1.088s Speedup 1
+n = 2 time 0.878s Speedup 1.24
+n = 4 time 0.475s Speedup 2.29
+n = 8 time 0.384s Speedup 2.83
+n = 16 time 0.337s Speedup 3.23
+
+
+--> we can see that elapsed time dropped significantly. We go down from 1 second to a third of a second. 
+This matches well with what was expected. We see a stronger decrese in elapsed time at the beginning and less effect of more parallel processing for higher number. Between 8 and 16, the time difference is already minimal, even if we doubled the amount of instances.
+
+The Speedup becomes less because of overhead and synchronisation. As parallelism is limited for the process 
