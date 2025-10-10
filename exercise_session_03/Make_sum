@@ -1,0 +1,23 @@
+CC = mpicc
+SRC = sum.c getTime.c
+
+all: sum_O0 sum_O1 sum_O2 sum_O3
+
+sum_O0:
+	$(CC) -O0 -o sum_O0 $(SRC)
+
+sum_O1:
+	$(CC) -O1 -o sum_O1 $(SRC)
+
+sum_O2:
+	$(CC) -O2 -o sum_O2 $(SRC)
+
+sum_O3:
+	$(CC) -O3 -o sum_O3 $(SRC)
+
+clean:
+	rm -f sum_O0 sum_O1 sum_O2 sum_O3
+
+.PHONY: all clean
+
+

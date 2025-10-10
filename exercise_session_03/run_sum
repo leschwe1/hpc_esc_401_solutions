@@ -1,0 +1,19 @@
+#!/bin/bash -l
+#SBATCH --account=uzh8
+#SBATCH --job-name="sum_leschwe"
+#SBATCH --time=00:05:00
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-core=1
+#SBATCH --ntasks-per-node=128
+#SBATCH --cpus-per-task=1
+#SBATCH --partition=debug
+#SBATCH --constraint=mc
+#SBATCH --output=output_sum_%x_%j.log
+#SBATCH --error=errors_sum_%x_%j.log
+
+export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
+
+srun ./sum_O0 > output_sum_O0.log 2> error_sum_O0.log
+srun ./sum_O1 > output_sum_O1.log 2> error_sum_O1.log
+srun ./sum_O2 > output_sum_O2.log 2> error_sum_O2.log
+srun ./sum_O3 > output_sum_O3.log 2> error_sum_O3.log
