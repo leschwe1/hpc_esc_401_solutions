@@ -1,10 +1,11 @@
 #include <stdio.h>
 #include "mpi.h"
-#include <getTime.h>
+#include "getTime.h"
 
 
 static long nSteps = 1000000000;
 static double PI25DT = 3.141592653589793238462643;
+double t0, t1, t_diff;
 
 int main(int argc, char** argv){
     int n, myRank, nProcs;
@@ -42,7 +43,7 @@ int main(int argc, char** argv){
     MPI_Finalize();
     t1 = getTime();
     t_diff = t1-t0;
-    printf("Elapsed time:", t_diff)
+    printf("Elapsed time: %f\n", t_diff);
 
     return 0;
 }

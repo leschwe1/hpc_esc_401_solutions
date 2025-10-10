@@ -1,3 +1,7 @@
+#include <sys/time.h>
+#include "getTime.h"
+
+
 double getTime(void) {
     struct timeval tv;
     struct timezone tz;
