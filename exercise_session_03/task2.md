@@ -45,3 +45,16 @@ clean:
 If you want to have a look on the files: 
 Makefile: Make_sum_p
 Code file: sum_p.c
+
+
+
+## thrird commit 
+
+I do not know if (and how?) to plot you the speedup in an .md, so for now I just give you the numbers:
+I did a quick excel plot for myself
+
+n = 1 time 1.079s
+n = 2 
+n = 4
+n = 8 
+n = 16 
