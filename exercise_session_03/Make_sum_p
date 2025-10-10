@@ -1,0 +1,10 @@
+sum_p: sum_p.c getTime.c getTime.h
+	gcc -O3 -fopenmp -o sum_p sum_p.c getTime.c -lm
+
+all: sum_p
+
+clean:
+	rm -f sum_p
+
+
+

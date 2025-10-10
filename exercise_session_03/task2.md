@@ -24,3 +24,24 @@ O3 full inining, vectorization, loop fusion, prefetching
 --> so my guess from above could be right that all the tools above O1 are just not useful for this short code and thus doesn't speed up the computation 
 
 Make it faster? --> parallelization! or running on more threads
+
+
+## second commit:
+i inserted the line just before the loop, cause that's what we want to speed up. In addition i loaded the module omp.h at the beginning to make the parallelization work 
+I compiled on level O3 just to ensure it is maximum fast
+
+
+so my makefile looks like this:
+sum_p: sum_p.c getTime.c getTime.h
+        gcc -O3 -fopenmp -o sum_p sum_p.c getTime.c -lm
+
+all: sum_p
+
+clean:
+        rm -f sum_p
+
+
+
+If you want to have a look on the files: 
+Makefile: Make_sum_p
+Code file: sum_p.c
