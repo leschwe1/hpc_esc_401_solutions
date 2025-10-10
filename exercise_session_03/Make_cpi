@@ -1,0 +1,11 @@
+cpi: cpi.c getTime.c getTime.h
+	cc -O3 -o cpi cpi.c getTime.c
+
+cpi_mpi: cpi_mpi.c getTime.c getTime.h
+	mpicc -O3 -o cpi_mpi cpi_mpi.c getTime.c
+
+all: cpi cpi_mpi
+
+clean:
+	rm -f cpi cpi_mpi
+

@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <sys/time.h>
-#include <getTime.h>
+#include "getTime.h"
 
 static long nSteps = 1000000000;
 static double PI25DT = 3.141592653589793238462643;
