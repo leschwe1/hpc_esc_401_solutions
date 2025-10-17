@@ -1,0 +1,32 @@
+
+#!/bin/bash
+
+#Write a script that reads an argument
+#from the command line and checks if the number given is prime or not. Make sure to add
+#“safety nets”, which assure your script will not crash when invalid input is given by the user.
+
+#Remember the “BASH way” is to run other programs to do most of the work
+
+#check for one value given only, otherwise take the first
+if [ "$#" -ne 1 ]; then
+    echo "ERROR: The given input is not a number: " $#
+    exit 1
+fi
+
+input="$1" #input = fist value
+
+# Check if input is a number (integer)
+if ! [[ "$input" =~ ^[0-9]+$ ]]; then
+    echo "ERROR: The given input is not a number: $input"
+    exit 1
+fi
+
+#check input for: is number is positive and valid (fist pos 1-9, second 0-9)
+if ! [[ "$input" =~ ^[1-9][0-9]*$ ]]; then
+    echo "ERROR: The given input is not a positive integer: " $input
+    exit 1
+fi
+
+
+#actual pipe: 
+factor $input | wc -w | awk -v n="$input"  '{ if ($1 == 2) print  n " is prime"; else print n " is composite" }'
