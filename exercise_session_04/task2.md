@@ -1,0 +1,11 @@
+- grep commands:
+    - 1) end with 00
+        - grep '00$'
+    - 2) start and end with 1
+        - grep '^1.*1$'
+    - 3) contain the pattern 110
+        - grep '110'
+    - 4) contain at least three times a 1
+        - grep '\(.*1\)\{3,\}'
+    - 5) contain at least three consecutive 1
+        - grep -E '(.*1){3,}'
