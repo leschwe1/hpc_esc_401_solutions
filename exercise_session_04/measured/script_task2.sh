@@ -16,7 +16,7 @@ n=1
 sum=0
 count=0
 
-output_file="solution_task2.txt"
+output_file="out.txt"
 > "$output_file" #ensure clear
 
 for i in {1..5}; do
