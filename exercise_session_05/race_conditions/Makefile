@@ -1,5 +1,5 @@
 CFLAGS = -O3 -ffast-math -fopenmp
-CC = CC
+CC = gcc
 
 
 all: parallel_1 parallel_full
