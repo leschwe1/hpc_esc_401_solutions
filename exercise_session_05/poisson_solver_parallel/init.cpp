@@ -98,7 +98,7 @@ void init_f(params p, double **f){
     double dx = 1.0 / (p.nx -1);
     double dy = 1.0 / (p.ny -1);
 
-    for ( int i = 0; i < p.nx -1: i++) { //loop horizontal
+    for ( int i = 0; i < p.nx -1; i++) { //loop horizontal
         double x = i * dx;
         for (int j = 0; j < p.ny; j++){ //loop vertical
             double y = j * dy;
