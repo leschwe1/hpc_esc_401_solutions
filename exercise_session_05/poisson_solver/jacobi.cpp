@@ -18,12 +18,9 @@ double norm_diff(params p, double** mat1, double** mat2){
             double diff = mat1[i][j] - mat2[i][j];
             sum += diff * diff;
         }
-        double norm = sqrt(sum) / (p.nx * p.ny);
-        return norm
     }
-
-    printf("Function norm_diff (jacobi.cpp l.12): not implemented.\n");
-    return 0.; // replace 0 with the norm
+    double norm = sqrt(sum) / (p.nx * p.ny);
+    return norm
 }
 
 /**
