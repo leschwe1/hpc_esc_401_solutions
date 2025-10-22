@@ -13,10 +13,12 @@ PROGRAMS=("parallel_1" "parallel_full")
 # List of thread counts to test
 THREADS=(1 2 4 8)
 
-for prog in "${PROGRAMS[@]}"; do
-    for t in "${THREADS[@]}"; do
+cd $SLURM_SUBMIT_DIR
+
+for prog in parallel_1 parallel_full; do
+    for t in 1 2 4 8; do
         export OMP_NUM_THREADS=$t
         echo "Running $prog with $t threads"
-        ./$prog > output_${prog}_threads${t}.txt
+        ./$prog > outputs/output_${prog}_threads${t}.txt
     done
 done
