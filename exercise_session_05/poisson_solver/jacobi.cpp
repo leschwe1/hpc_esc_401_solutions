@@ -20,7 +20,7 @@ double norm_diff(params p, double** mat1, double** mat2){
         }
     }
     double norm = sqrt(sum) / (p.nx * p.ny);
-    return norm
+    return norm;
 }
 
 /**
