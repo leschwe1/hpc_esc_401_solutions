@@ -2,7 +2,9 @@ CFLAGS = -O3 -ffast-math -fopenmp
 CC = gcc
 
 
-all: parallel_1 parallel_full parallel_full_atomic_critical
+all: parallel_1 parallel_full parallel_full_atomic_critical serial
+serial: serial.c 
+	$(CC) $(CFLAGS) serial.c -o serial
 parallel_1: parallel_1.c
 	$(CC) $(CFLAGS) parallel_1.c -o parallel_1
 parallel_full: parallel_full.c
