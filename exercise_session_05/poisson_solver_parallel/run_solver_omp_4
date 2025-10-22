@@ -1,0 +1,14 @@
+#!/bin/bash
+#SBATCH --job-name=poisson_omp_4
+#SBATCH --output=poisson_omp_4_%j.out
+#SBATCH --error=poisson_omp_4_%j.err
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=4
+#SBATCH --time=00:05:00
+#SBATCH --mem=2G
+
+
+export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
+
+# Run the OpenMP executable
+./poisson_solver_omp
