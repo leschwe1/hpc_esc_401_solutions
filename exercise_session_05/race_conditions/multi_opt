@@ -19,4 +19,3 @@ for prog in "${PROGRAMS[@]}"; do
         echo "Running $prog with $t threads"
         ./$prog > output_${prog}_threads${t}.txt
     done
-done

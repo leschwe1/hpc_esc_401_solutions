@@ -58,6 +58,8 @@ int main(int argc, char *argv[]){
     for (int i=0; i<num_size; i++)
         if (numbers[i] > maxval)
             maxval = numbers[i];
+    printf("max number in file: %d\n",maxval);	
+
 
     // second loop
     int num_n0 = 0;
