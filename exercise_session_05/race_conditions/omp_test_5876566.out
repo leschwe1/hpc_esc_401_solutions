@@ -1,0 +1,8 @@
+Running parallel_1 with 1 threads
+Running parallel_1 with 2 threads
+Running parallel_1 with 4 threads
+Running parallel_1 with 8 threads
+Running parallel_full with 1 threads
+Running parallel_full with 2 threads
+Running parallel_full with 4 threads
+Running parallel_full with 8 threads
