@@ -10,4 +10,4 @@
 export OMP_NUM_THREADS=1
 
 # Run the OpenMP executable
-./poisson_solver_omp
+./main
