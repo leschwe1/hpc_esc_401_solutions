@@ -1,0 +1,22 @@
+#!/bin/bash
+#SBATCH --job-name=omp_test
+#SBATCH --output=omp_test_%j.out
+#SBATCH --error=omp_test_%j.err
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=8     # max threads you plan to test
+#SBATCH --time=00:10:00
+#SBATCH --mem=2G
+
+
+# List of executables
+PROGRAMS=("parallel_1" "parallel_full")
+# List of thread counts to test
+THREADS=(1 2 4 8)
+
+for prog in "${PROGRAMS[@]}"; do
+    for t in "${THREADS[@]}"; do
+        export OMP_NUM_THREADS=$t
+        echo "Running $prog with $t threads"
+        ./$prog > output_${prog}_threads${t}.txt
+    done
+done
