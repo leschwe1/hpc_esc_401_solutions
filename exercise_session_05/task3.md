@@ -50,3 +50,25 @@ so as i used the reduction version from the start, the output was correct and i 
 I never ran into a race situation, it was prevented in this version already.
 
 In addition i then made an extra parallel_full_atomic_critical version as well.
+
+--> placed critical where it is to: only one thread executes this block at a time but the most minimal selection is done so (not the entire loop!)
+
+--> placed atomic above num_n0++ so that the increments are done without race condition safely 
+
+I ran all three and we can see they all work:
+    [eiger][lschweis@eiger-ln002 race_conditions]$ export OMP_NUM_THREADS=8
+    [eiger][lschweis@eiger-ln002 race_conditions]$ ./parallel_1
+    Size of integer array/file: 1000000
+    max number in file: 38747
+    number of 0s in file: 646016
+    true number of 0s in file: 646016
+    [eiger][lschweis@eiger-ln002 race_conditions]$ ./parallel_full
+    Size of integer array/file: 1000000
+    max number in file: 38747
+    number of 0s in file: 646016
+    true number of 0s in file: 646016
+    [eiger][lschweis@eiger-ln002 race_conditions]$ ./parallel_full_atomic_critical
+    Size of integer array/file: 1000000
+    max number in file: 38747
+    number of 0s in file: 646016
+    true number of 0s in file: 646016
