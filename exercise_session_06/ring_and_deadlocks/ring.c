@@ -14,14 +14,24 @@ int main(int argc, char** argv) {
 
     int send_rank = my_rank;  // Send    buffer
     int recv_rank = 0;        // Receive buffer
+    int my_sum = 0;     //initialize sum that is returned
 
     // Compute the ranks of left/right neighbours 
-    int left_rank, right_rank;
+        //with the % size we ensure that the sizeNo is respected and the circle is closed
+    int left_rank = (my_rank - 1 + size) % size; 
+    int right_rank = (my_rank + 1) % size;
 
     // Loop over the number of processes
     //     send to right, receive from left
     //     update the send buffer
     //     update the local sum
+    for (int i = 0; i < size; i++) {
+        MPI_Ssend(&send_rank, 1, MPI_INT, right_rank, 0, MPI_COMM_WORLD);
+        MPI_Recv(&recv_rank, 1, MPI_INT, left_rank, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
+
+        my_sum += recv_rank;
+        send_rank = recv_rank;
+    }
 
     printf("I am processor %d out of %d, and the sum is %d\n", my_rank, size, my_sum);
 
