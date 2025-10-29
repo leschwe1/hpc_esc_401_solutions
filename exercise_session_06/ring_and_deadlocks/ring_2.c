@@ -21,6 +21,10 @@ int main(int argc, char** argv) {
     int left_rank = (my_rank - 1 + size) % size; 
     int right_rank = (my_rank + 1) % size;
 
+
+    // set this to 2 as we have two operations per iterations (receive and send)
+    MPI_Request requests[2];
+
     // Loop over the number of processes
     //     send to right, receive from left
     //     update the send buffer
