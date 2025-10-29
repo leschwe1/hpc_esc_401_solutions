@@ -8,3 +8,6 @@ In this solution now we split the processes into two grops. one sends first, the
 
 **ring_2.c: Why are these methods better solutions than synchronous communication for our ring problem?**
 First of all we can see the code is much shorter and less complex. In addition to this, we do not need even/odd ordering anymore, with the now used methods, all processes can send and receive at the same time, but without ending in a deadlock. So in short it is solved more elegant
+
+**ring_3.c: Describe what advantage the new communicator provides.**
+The big advantage we can find in upscaling. With the cartesian system implemented, it's much easier to exted to higher dimensions. neighbours are calculated automatically and the peridic BC as well.
