@@ -14,7 +14,6 @@ int main(int argc, char** argv) {
 
     int send_rank = my_rank;  // Send    buffer
     int recv_rank = 0;        // Receive buffer
-    int my_sum = 0;     //initialize sum that is returned
 
     // Compute the ranks of left/right neighbours 
         //with the % size we ensure that the sizeNo is respected and the circle is closed
