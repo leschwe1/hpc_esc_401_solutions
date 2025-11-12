@@ -13,14 +13,18 @@ module load nvhpc
 blocks=(60 120 180 240 300 360 420 600)
 threads=(16 32 48 64 80 96 112 128 144 160)
 
-#make output file
-echo "NUM_BLOCK,NUM_THREAD,Time(s)" > timing_results.csv
+#output file creation and header
+echo "CUDA Scaling Results" > scaling_results.txt
+echo "====================" >> scaling_results.txt
+echo "" >> scaling_results.txt
 
-#loop over given blocks/threads
+#loop over given vars
 for b in "${blocks[@]}"; do
   for t in "${threads[@]}"; do
     echo "Running NUM_BLOCK=$b NUM_THREAD=$t"
-    time_str=$(srun ./cpi_cuda_scaling $b $t | grep "computed in" | awk '{print $10}')
-    echo "$b,$t,$time_str" >> timing_results.csv
+    echo "NUM_BLOCK=$b NUM_THREAD=$t" >> scaling_results.txt
+    srun ./cpi_cuda_scaling $b $t >> scaling_results.txt
+    echo "" >> scaling_results.txt
   done
 done
+
