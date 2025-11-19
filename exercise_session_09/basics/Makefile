@@ -7,7 +7,7 @@ GCC  ?= 0
 VERBOSE ?= 0
 override CPPFLAGS += -I../common
 
-ifeq ($(PE_ENV), NVIDIA))
+ifeq ($(PE_ENV), NVIDIA)
 	CXX = nvc++
 	CXXFLAGS = -O3 -acc -mp -Minfo=acc -std=c++11 -gpu=cc90
 endif
