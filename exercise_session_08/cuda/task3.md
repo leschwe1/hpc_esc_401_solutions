@@ -256,4 +256,4 @@
 
 - this limit might be the hardware saturation point
 
-- so the best solution is somewhere in the middle between max blocks and max threads to not overutilize but efficiently use the GPU
+- so the best solution is somewhere in the middle between max blocks and max threads to not overutilize but efficiently use the GPUgit 
