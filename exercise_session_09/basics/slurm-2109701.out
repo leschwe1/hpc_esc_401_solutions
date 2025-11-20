@@ -1,0 +1,8 @@
+Running dot product on GPU and CPU
+hostptr=0x400004190010,stride=1,size=1048576,extent=-1,eltsize=8,name=x[:n],flags=0x200=present,async=-1,threadid=1
+FATAL ERROR: data in PRESENT clause was not found on device 1: name=x[:n] host:0x400004190010
+ file:/users/lschweis/hpc_esc_401_solutions/exercise_session_09/basics/dot_openacc.cpp _Z7dot_gpuPKdS0_i line:23
+
+dot product OpenACC of length n = 1048576 : 8MB
+srun: error: nid006150: task 0: Exited with exit code 1
+srun: Terminating StepId=2109701.0

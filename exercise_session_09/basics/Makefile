@@ -33,7 +33,7 @@ ifeq ($(PE_ENV), GNU)
 	LDFLAGS += -L$(CRAY_CUDATOOLKIT_DIR)/lib64 -lcudart
 endif
 
-OPENACC_BENCHMARKS= blur.openacc dot.openacc
+OPENACC_BENCHMARKS= blur.openacc blur.openacc.nocopies dot.openacc
 BENCHMARKS=$(OPENACC_BENCHMARKS)
 
 all: $(BENCHMARKS)
@@ -43,6 +43,11 @@ util.o: ../common/util.f03
 
 blur.openacc: blur_openacc.cpp
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) $< -o $@ $(LDFLAGS)
+
+
+blur.openacc.nocopies: blur_openacc_nocopies.cpp
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) $< -o $@ $(LDFLAGS)
+
 
 dot.openacc: dot_openacc.cpp
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) $< -o $@ $(LDFLAGS)
