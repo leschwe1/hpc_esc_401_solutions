@@ -1,0 +1,57 @@
+===== Running naive GPU version =====
+Running blur 20 100
+dispersion 1D test of length n = 1048580 : 8.00003MB
+item 1 differs (expected, found): 1 != 0.920099
+==== failure ====
+Host version took 0.0698213 s (0.000698213 s/step)
+GPU version took 1.01124 s (0.0101124 s/step)
+Running blur 16 100
+dispersion 1D test of length n = 65540 : 0.500031MB
+item 1 differs (expected, found): 1 != 0.920099
+==== failure ====
+Host version took 0.00390337 s (3.90337e-05 s/step)
+GPU version took 0.79 s (0.0079 s/step)
+Running blur 24 100
+dispersion 1D test of length n = 16777220 : 128MB
+item 1 differs (expected, found): 1 != 0.920099
+==== failure ====
+Host version took 1.33276 s (0.0133276 s/step)
+GPU version took 1.21456 s (0.0121456 s/step)
+Running blur 20 50
+dispersion 1D test of length n = 1048580 : 8.00003MB
+item 1 differs (expected, found): 1 != 0.886961
+==== failure ====
+Host version took 0.0291039 s (0.000582078 s/step)
+GPU version took 0.823767 s (0.0164753 s/step)
+Running blur 20 200
+dispersion 1D test of length n = 1048580 : 8.00003MB
+item 1 differs (expected, found): 1 != 0.943534
+==== failure ====
+Host version took 0.115078 s (0.000575391 s/step)
+GPU version took 0.876754 s (0.00438377 s/step)
+===== Running nocopies GPU version =====
+Running blur 20 100
+dispersion 1D test of length n = 1048580 : 8.00003MB
+==== success ====
+Host version took 0.0579388 s (0.000579388 s/step)
+GPU version took 0.822415 s (0.00822415 s/step)
+Running blur 16 100
+dispersion 1D test of length n = 65540 : 0.500031MB
+==== success ====
+Host version took 0.00409854 s (4.09854e-05 s/step)
+GPU version took 0.828164 s (0.00828164 s/step)
+Running blur 24 100
+dispersion 1D test of length n = 16777220 : 128MB
+==== success ====
+Host version took 1.31306 s (0.0131306 s/step)
+GPU version took 1.04959 s (0.0104959 s/step)
+Running blur 20 50
+dispersion 1D test of length n = 1048580 : 8.00003MB
+==== success ====
+Host version took 0.0292831 s (0.000585663 s/step)
+GPU version took 0.845398 s (0.016908 s/step)
+Running blur 20 200
+dispersion 1D test of length n = 1048580 : 8.00003MB
+==== success ====
+Host version took 0.114642 s (0.000573211 s/step)
+GPU version took 0.859619 s (0.0042981 s/step)
