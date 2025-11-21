@@ -9,8 +9,12 @@ we find a massive overhead as we create many copies. in > buffer > buffer > out 
 This dominates runtime --> GPU slowed down
 
 In addition to that, my runs failed. I tried to fix this through boundary conditions, but this was unsuccessful. 
-Timing wise, we see that the naive version ran really slow. Approx 10x longer than the host version.
 
+I tried with three different versions (see outputs v1-v3) but was not able to fix it so that it does not fail?
+I added the naive function used in each output at the top of each version. the nocopies was not edited.
+S
+
+Timing wise, we see that the naive version ran rather slow. All sizes / runs took about 0.7-1 sec
 The GPU took almost a second (0.7-0.8) to run in all runs while the host took different amounts of time depending on size. these spread from very quick in small cases to >1sec for big ones. 
 
 **What is the difference with the naive implementation?**
