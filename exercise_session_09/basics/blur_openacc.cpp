@@ -60,6 +60,11 @@ void blur_twice_gpu_naive(double *in , double *out , int n, int nsteps)
             out[i] = blur(i, buffer);
         }
 
+        out[0]   = in[0];
+        out[1]   = in[1];
+        out[n-2] = in[n-2];
+        out[n-1] = in[n-1];
+
         in = out;
     }
 
