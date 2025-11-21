@@ -87,6 +87,8 @@ void blur_twice_gpu_nocopies(double *in , double *out , int n, int nsteps)
             for (auto i = 0; i < n; ++i) {
                 in[i] = out[i];
             }
+
+            in = out;
         }
     }
 
