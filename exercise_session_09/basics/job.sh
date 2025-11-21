@@ -5,7 +5,11 @@
 #SBATCH --partition=normal
 #SBATCH --constraint=gpu
 #SBATCH --ntasks=1
+#SBATCH --cpus-per-task=1
 #SBATCH --gres=gpu:1
+
+module load nvhpc
+
 
 echo "===== Running naive GPU version ====="
 
@@ -39,4 +43,4 @@ echo "Running blur 20 50"
 srun ./blur.openacc.nocopies 20 50
 
 echo "Running blur 20 200"
-srun ./blur.openacc.nocopies 20 20
+srun ./blur.openacc.nocopies 20 200
