@@ -17,6 +17,9 @@ S
 Timing wise, we see that the naive version ran rather slow. All sizes / runs took about 0.7-1 sec
 The GPU took almost a second (0.7-0.8) to run in all runs while the host took different amounts of time depending on size. these spread from very quick in small cases to >1sec for big ones. 
 
+I think the naive GPU version does not work because it copies the arrays to and from the GPU in every step, which is slow and error-prone. The pointer swap in = out only changes the host pointer, so the GPU does not see the updated data. Also, the boundary elements are not handled properly, causing the results to be wrong.
+Unsure if this is implied or my bad 
+
 **What is the difference with the naive implementation?**
 
 in the nocopies variant, exactly the copying mentioned above is reduced. This speeds up the process. 
