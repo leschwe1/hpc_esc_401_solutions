@@ -8,7 +8,7 @@
 __global__ void kern_set_val (float *gpu_ptr, float value, int n) {
   int i = blockIdx.x * blockDim.x + threadIdx.x;   
     if (i < n) {
-        gpu_ptr[i] = v alue;
+        gpu_ptr[i] = value;
     }
 }
 
