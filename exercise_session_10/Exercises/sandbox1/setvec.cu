@@ -6,9 +6,10 @@
 #define BLOCKSIZE 256
 
 __global__ void kern_set_val (float *gpu_ptr, float value, int n) {
-  int i;
-  //TO DO: evaluate the value of i 
-  gpu_ptr[i] = value;
+  int i = blockIdx.x * blockDim.x + threadIdx.x;   
+    if (i < n) {
+        gpu_ptr[i] = v alue;
+    }
 }
 
 int main () {
@@ -24,10 +25,14 @@ int main () {
   cudaMalloc (&gpu_ptr, sizeof(float)*N);
 
   //TO DO : write kernel invocation here
+  int numBlocks = (N + BLOCKSIZE - 1) / BLOCKSIZE;
+    kern_set_val<<<numBlocks, BLOCKSIZE>>>(gpu_ptr, value, N);
 
-  cudaDeviceSynchronize ();
+  cudaDeviceSynchronize();
+
 
   //TO DO : copy data to host
+  cudaMemcpy(ptr, gpu_ptr, sizeof(float)*N, cudaMemcpyDeviceToHost);
 
   cudaFree (gpu_ptr);
 
