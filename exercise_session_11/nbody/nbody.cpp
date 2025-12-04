@@ -1,5 +1,6 @@
 #include <random>
 #include <vector>
+
 using std::vector;
 
 struct particle {
