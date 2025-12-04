@@ -40,14 +40,14 @@ void ic(particles &plist, int n) {
     }
 }
 
-
 void forces(particles &plist) {
-    int n = plist.x.size();  // or plist.y.size() / plist.z.size()
+    int n = plist.x.size();  // number of particles
+
     for (int i = 0; i < n; ++i) {
         float ax = 0.0f, ay = 0.0f, az = 0.0f;
-        for (int j = 0; j < n; ++j) {
-            if (i == j) continue;
 
+        // Loop over 0 .. i-1
+        for (int j = 0; j < i; ++j) {
             float dx = plist.x[j] - plist.x[i];
             float dy = plist.y[j] - plist.y[i];
             float dz = plist.z[j] - plist.z[i];
@@ -58,11 +58,26 @@ void forces(particles &plist) {
             ay += dy * ir3;
             az += dz * ir3;
         }
+
+        // Loop over i+1 .. n-1
+        for (int j = i + 1; j < n; ++j) {
+            float dx = plist.x[j] - plist.x[i];
+            float dy = plist.y[j] - plist.y[i];
+            float dz = plist.z[j] - plist.z[i];
+            float r = sqrtf(dx*dx + dy*dy + dz*dz);
+            float ir3 = 1.0f / (r*r*r);
+
+            ax += dx * ir3;
+            ay += dy * ir3;
+            az += dz * ir3;
+        }
+
         plist.ax[i] = ax;
         plist.ay[i] = ay;
         plist.az[i] = az;
     }
 }
+
 
 
 int main(int argc, char *argv[]) {
