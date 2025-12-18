@@ -30,36 +30,37 @@ I copied it to the local storgae with
   hdfs dfs -get output/part-00000 ~/hadoop_output.txt
 
 inside we find content like:
-          0       10
-          00      1
-          000     6
-          000he   1
-          000hermansjr000 4
-          007cigarjoe     1
-          007llisav       4
-          00patriot       1
-          00rstw00        2
-          01101o10        1
-          03      1
-          03052014        1
-          0306    1
-          03slex  1
-          04      1
-          05fxdli 1
-          06      1
-          061615  1
-          07      3
-          071067  1
-          0745    1
-          08      10
-          081     1
-          09      4
-          0930    1
-          0bama   1
-          0nlypablo       1
-          0nonsense       1
-          0unicornchris0  1
-          0xbloood        1
+
+      0       10
+      00      1
+      000     6
+      000he   1
+      000hermansjr000 4
+      007cigarjoe     1
+      007llisav       4
+      00patriot       1
+      00rstw00        2
+      01101o10        1
+      03      1
+      03052014        1
+      0306    1
+      03slex  1
+      04      1
+      05fxdli 1
+      06      1
+      061615  1
+      07      3
+      071067  1
+      0745    1
+      08      10
+      081     1
+      09      4
+      0930    1
+      0bama   1
+      0nlypablo       1
+      0nonsense       1
+      0unicornchris0  1
+      0xbloood        1
 
 ### visit the hadoop api from your local machine. Can you find the output files?
 
